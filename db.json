@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  
+    "users": [
+    { "id": 1, "name": "Tom1", "age": 30 },
+    { "id": 2, "name": "Tom2", "age": 31 },
+    { "id": 3, "name": "Tom3", "age": 32 },
+    { "id": 4, "name": "Tom4", "age": 33 }
+]
+
+}

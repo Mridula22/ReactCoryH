@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import Users from './Users';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+function SayHello() {    //S is uppercase. That is required so that react knows it is a component
+    return <h1>Hello from me </h1>;
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const SayHi = () => <h1>Hi from me </h1>;
+
+ReactDOM.render(<Users />, document.getElementById("root"));
+
