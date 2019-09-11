@@ -1,4 +1,5 @@
 import React from 'react';
+import {getUsers, deleteUser} from './api/userApi';
 
 class Users extends React.Component {
     constructor(props) {
@@ -12,19 +13,27 @@ class Users extends React.Component {
                 { id: 4, name: "Book4", pages: 33 }],
 
             users: [
-                { id: 1, name: "Tom1", age: 30 },
-                { id: 2, name: "Tom2", age: 31 },
-                { id: 3, name: "Tom3", age: 32 },
-                { id: 4, name: "Tom4", age: 33 }
+                // { id: 1, name: "Tom1", age: 30 },
+                // { id: 2, name: "Tom2", age: 31 },
+                // { id: 3, name: "Tom3", age: 32 },
+                // { id: 4, name: "Tom4", age: 33 }
             ]
         }
 
         //this.deleteUser = this.deleteUser.bind(this);
     }
+
+    //called after component is mounted
+    componentDidMount() {
+        getUsers().then(users => this.setState({users: users}));
+    }
+
     deleteUser = userId => {
-        const users1 = this.state.users.filter(user => user.id !== userId);
-        this.setState({
-            users: users1
+        deleteUser(userId).then(() => {
+            const users1 = this.state.users.filter(user => user.id !== userId);
+            this.setState({
+                users: users1
+            })
         })
     }
         
